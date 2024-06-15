@@ -11,12 +11,18 @@
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.12.0",
+    "ag-grid-vue3": "^31.3.2",
+    "datatables.net-colreorder-dt": "^2.0.3",
+    "datatables.net-colresize-unofficial": "^1.7.2",
+    "datatables.net-dt": "^2.0.8",
+    "datatables.net-rowreorder-dt": "^1.5.0",
     "datatables.net-vue3": "^3.0.1",
+    "jquery": "^3.7.1",
     "nuxt": "^3.12.1",
     "vue": "^3.4.27",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "nuxt-font-loader": "^2.3.5"
+    "@types/jquery": "^3.5.30"
   }
 }

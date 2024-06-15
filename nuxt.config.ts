@@ -7,16 +7,8 @@ const TailwindTheme = {
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "nuxt-font-loader"],
+  modules: ["@nuxtjs/tailwindcss"],
   devtools: { enabled: true },
-  fontLoader: {
-    local: [
-      {
-        src: "/fonts/MyriadPro-Regular.otf",
-        family: "Myriad Pro",
-      }
-    ]
-  },
   app: {
     head: {
       viewport: "width=device-width, initial-scale=1, minimum-scale=1",
