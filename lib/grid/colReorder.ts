@@ -27,7 +27,7 @@ export function startDrag(e: MouseEvent) {
 
     if (currentIndex == newIndex) return;
 
-    swapColumns(table, currentIndex, newIndex);
+    moveColumn(table, currentIndex, newIndex);
     currentIndex = newIndex;
     // console.log(currentIndex, th.cellIndex);
     // th.removeEventListener("mouseenter", onDropEnter);
@@ -78,7 +78,7 @@ export function startDrag(e: MouseEvent) {
   document.addEventListener("mouseup", onMouseUp);
 }
 
-export function swapColumns(table: HTMLTableElement, from: number, to: number) {
+export function moveColumn(table: HTMLTableElement, from: number, to: number) {
   // console.log(from, to);
   if (from > to) {
     [from, to] = [to, from];
@@ -93,12 +93,12 @@ export function swapColumns(table: HTMLTableElement, from: number, to: number) {
 }
 
 
-function appendAtIndex(parent: Element, child: Element, index: number) {
+export function appendAtIndex(parent: Element, child: Element, index: number) {
   // const target = parent.children[index];
   // target.insertAdjacentElement("afterend", child);
 
   // console.log(index);
-  if (index >= parent.children.length - 1) {
+  if (index >= parent.children.length + 1) {
     // parent.removeChild(child);
     parent.appendChild(child);
   } else {

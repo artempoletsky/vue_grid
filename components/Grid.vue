@@ -69,7 +69,7 @@ function onReorder({ from, to }: colReorder.ColReorderEventPayload) {
 
 onMounted(() => {
   // resize.onMounted(table.value!);
-  // (window as any).swapColumns = colReorder.swapColumns;
+  (window as any).moveColumn = colReorder.moveColumn;
   table.value!.addEventListener("colReorder", (e: any) => {
     // console.log(e);
     onReorder(e.detail)
