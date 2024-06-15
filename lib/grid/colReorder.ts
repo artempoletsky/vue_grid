@@ -79,17 +79,20 @@ export function startDrag(e: MouseEvent) {
 }
 
 export function moveColumn(table: HTMLTableElement, from: number, to: number) {
-  // console.log(from, to);
   if (from > to) {
-    [from, to] = [to, from];
+    for (const tr of table.querySelectorAll("tr")) {
+      appendAtIndex(tr, tr.children[from], to - 1);
+    }
+    const colgroup = table.querySelector("colgroup")!;
+    appendAtIndex(colgroup, colgroup.children[from], to - 1);
+  } else {
+    for (const tr of table.querySelectorAll("tr")) {
+      appendAtIndex(tr, tr.children[from], to);
+    }
+    const colgroup = table.querySelector("colgroup")!;
+    appendAtIndex(colgroup, colgroup.children[from], to);
   }
 
-  for (const tr of table.querySelectorAll("tr")) {
-    appendAtIndex(tr, tr.children[from], to);
-  }
-  const colgroup = table.querySelector("colgroup")!;
-  appendAtIndex(colgroup, colgroup.children[from], to);
-  // colgroup.inser
 }
 
 

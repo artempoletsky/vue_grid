@@ -147,3 +147,22 @@ test("moveColumn", () => {
   expect(colGroup.children[2].style.width).toBe("");
   expect(colGroup.children[3].style.width).toBe("20%");
 });
+
+
+test("moveColumn bug", () => {
+  let [table, headRow, colGroup] = resetTable();
+
+  moveColumn(table, 0, 2);
+  let ths = headRow.children;
+  expect(ths[0].innerHTML).toBe("Head 2");
+  expect(ths[1].innerHTML).toBe("Head 3");
+  expect(ths[2].innerHTML).toBe("Head 1");
+
+
+  moveColumn(table, 2, 0);
+  ths = headRow.children;
+  expect(ths[0].innerHTML).toBe("Head 1");
+  expect(ths[1].innerHTML).toBe("Head 2");
+  expect(ths[2].innerHTML).toBe("Head 3");
+
+});
